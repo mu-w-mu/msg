@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>checkbox.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+	
+		$(function(){
+			$("#all").click(function(){
+				var arr=$(":checkbox");
+				for(var i=0;i<arr.length;i++)
+					{
+						$(arr[i]).attr("checked","checked");
+					}
+			});
+			
+			$("#res").click(function(){
+				var arr=$(":checkbox");
+				for(var i=0;i<arr.length;i++)
+					{
+						if($(arr[i]).attr("checked")=="checked")
+							{
+								$(arr[i]).attr("checked",null);
+							}
+						else
+							{
+								$(arr[i]).attr("checked","checked");
+							}
+					}
+			});
+			
+		});
+	</script>
+  </head>
+  
+  <body>
+    	<input type="checkbox" name="cname">
+        <input type="checkbox" name="cname">
+        <input type="checkbox" name="cname">
+        <input type="checkbox" name="cname">
+        <input type="checkbox" name="cname">
+        <input type="checkbox" name="cname">
+        <input type="checkbox" name="cname">
+    	<input type="button" value="全选" id="all">
+    	<input type="button" value="反选" id="res">
+  </body>
+</html>
