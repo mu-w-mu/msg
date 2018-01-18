@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itbz.msg.dao.MsginfoDao" >
+	<select id="querySendMsg" resultType="com.itbz.msg.po.Msginfo" parameterType="com.itbz.msg.po.User">
+		select * from msginfo where sendfrom=#{id} 
+	</select>
+	<select id="queryReceiveMsg" resultType="com.itbz.msg.po.Msginfo" parameterType="com.itbz.msg.po.User">
+		select * from msginfo where sendto=#{id} 
+	</select>
+	<insert id="saveSendMsg" parameterType="com.itbz.msg.po.Msginfo">
+		insert into msginfo(title,msgcontent,createtime,sendfrom,sendto) values(#{title},#{msgcontent},#{createtime},#{sendfrom},#{sendto})
+	</insert>
+	<delete id="deleteMsg" parameterType="java.lang.Integer">
+		delete from msginfo where msgid=#{msgid}
+	</delete>
+</mapper>
