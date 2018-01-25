@@ -81,6 +81,7 @@ public class MsginfoController {
 	@ResponseBody
 	public Object deleteMsg(@RequestParam("msgid") Integer msgid)
 	{
+		
 		MsgVo msgVo=new MsgVo();
 		if(ms.deleteMsg(msgid)>0)
 		{
